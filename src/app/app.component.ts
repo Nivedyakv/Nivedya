@@ -30,26 +30,38 @@ import { ContactComponent }    from './features/contact/contact.component';
     <main>
       @defer (on viewport) {
         <app-hero></app-hero>
+      } @placeholder {
+        <div style="height: 100vh; background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);"></div>
       }
 
       @defer (on viewport) {
         <app-about></app-about>
+      } @placeholder {
+        <div style="height: 400px; background: linear-gradient(135deg, #2d2d44 0%, #1e1e2e 100%);"></div>
       }
 
       @defer (on viewport) {
         <app-skills></app-skills>
+      } @placeholder {
+        <div style="height: 600px; background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);"></div>
       }
 
       @defer (on viewport) {
         <app-experience></app-experience>
+      } @placeholder {
+        <div style="height: 500px; background: linear-gradient(135deg, #2d2d44 0%, #1e1e2e 100%);"></div>
       }
 
       @defer (on viewport) {
         <app-projects></app-projects>
+      } @placeholder {
+        <div style="height: 600px; background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);"></div>
       }
 
       @defer (on viewport) {
         <app-contact></app-contact>
+      } @placeholder {
+        <div style="height: 400px; background: linear-gradient(135deg, #2d2d44 0%, #1e1e2e 100%);"></div>
       }
     </main>
 
