@@ -167,7 +167,7 @@
   &__photo-card {
     position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 250px;
     aspect-ratio: 3/4;
 
     &:hover {
@@ -252,8 +252,8 @@
     }
 
     &--br {
-      bottom: 110px;
-      right: -24px;
+      bottom: -53px;
+      right: 32px;
       animation: float-chip 4s ease-in-out infinite 2s;
     }
 
