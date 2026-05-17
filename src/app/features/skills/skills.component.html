@@ -1,0 +1,41 @@
+<!-- features/skills/skills.component.html -->
+<section id="skills" class="skills section-wrapper">
+  <div class="skills__inner">
+
+    <app-section-label
+      number="02"
+      label="Technical Skills"
+      title="What I Bring to the Table"
+      appScrollAnimation [delay]="0"
+    ></app-section-label>
+
+    <div class="skills__grid" *ngIf="skillCategories$ | async as categories; else loading">
+      <div
+        class="skills__card"
+        *ngFor="let cat of categories; trackBy: trackByCategory; let i = index"
+        appScrollAnimation [delay]="i * 120"
+      >
+        <div class="skills__card-header">
+          <span class="skills__card-icon">{{ cat.icon }}</span>
+          <h3 class="skills__card-title">{{ cat.category }}</h3>
+        </div>
+        <div class="skills__card-divider"></div>
+
+        <div class="skills__bars">
+          <app-skill-bar
+            *ngFor="let skill of cat.skills"
+            [name]="skill.name"
+            [percentage]="skill.percentage"
+          ></app-skill-bar>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #loading>
+      <div class="skills__skeleton">
+        <div class="skeleton-card" *ngFor="let i of [1,2,3]"></div>
+      </div>
+    </ng-template>
+
+  </div>
+</section>

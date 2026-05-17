@@ -1,0 +1,18 @@
+[
+  {
+    "id": "dynamic-dashboard",
+    "title": "Dynamic Dashboard Application",
+    "stack": ["Angular", "D3.js", "TypeScript", "RxJS", "SCSS"],
+    "description": "Architected a full-featured analytics dashboard with Angular & D3.js, supporting 5+ chart types with real-time data rendering. Leveraged lazy loading & OnPush change detection to achieve ~30% faster load time across mobile and desktop devices.",
+    "highlights": [
+      "5+ chart types with real-time data rendering",
+      "~30% faster load time via lazy loading",
+      "OnPush change detection for performance",
+      "Fully responsive — mobile & desktop"
+    ],
+    "githubUrl": "https://github.com/nivedyakv",
+    "liveUrl": "#",
+    "featured": true,
+    "category": "Dashboard"
+  }
+]

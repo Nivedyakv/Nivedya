@@ -1,0 +1,117 @@
+<!-- features/hero/hero.component.html -->
+<section id="hero" class="hero">
+
+  <!-- Background grid lines -->
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <!-- Ambient glow orbs -->
+  <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+  <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+
+    <!-- LEFT: Text content -->
+    <div class="hero__content">
+
+      <div class="hero__available">
+        <span class="hero__available-dot"></span>
+        <span>Available for Work</span>
+      </div>
+
+      <p class="hero__hello">_Hello I'M</p>
+
+      <h1 class="hero__name">Nivedya KV</h1>
+
+      <div class="hero__roles">
+        <p class="hero__role hero__role--primary">&gt; Angular Developer</p>
+        <p class="hero__role hero__role--secondary">&gt; Frontend Engineer</p>
+      </div>
+
+      <p class="hero__desc">
+        Performance-focused Angular Developer with 2+ years of experience
+        engineering scalable, high-performance UI applications. Star Performer
+        at Beinex. Based in Bangalore, India.
+      </p>
+
+      <div class="hero__ctas">
+        <button class="btn-primary" (click)="scrollTo('projects')">
+          View Projects <span>→</span>
+        </button>
+        <button class="btn-secondary" (click)="downloadCv()">
+          Download CV
+        </button>
+      </div>
+
+      <!-- Stats row -->
+      <div class="hero__stats">
+        <app-stat-item
+          *ngFor="let stat of stats; let i = index"
+          [value]="stat.value"
+          [label]="stat.label"
+        ></app-stat-item>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Profile photo card -->
+    <div class="hero__photo-wrap">
+      <div class="hero__photo-card">
+
+        <!-- Rotating decorative border ring -->
+        <div class="hero__photo-ring" aria-hidden="true"></div>
+        <div class="hero__photo-ring hero__photo-ring--inner" aria-hidden="true"></div>
+
+        <!-- Photo frame -->
+        <div class="hero__photo-frame">
+          <img
+            [src]="profilePhoto"
+            alt="Nivedya KV — Angular Developer"
+            class="hero__photo"
+            loading="eager"
+          />
+          <div class="hero__photo-overlay" aria-hidden="true"></div>
+        </div>
+
+        <!-- Floating chip — top left -->
+        <div class="hero__chip hero__chip--tl">
+          <span class="hero__chip-dot"></span>
+          <span>Angular 17</span>
+        </div>
+
+        <!-- Floating chip — bottom right -->
+        <div class="hero__chip hero__chip--br">
+          <span>⭐ Star Performer</span>
+          <span class="hero__chip-dot hero__chip-dot--accent"></span>
+        </div>
+
+        <!-- Achievement highlights card -->
+        <div class="hero__highlights">
+          <p class="hero__highlights-label">Key Achievements</p>
+          <div
+            class="hero__highlight-item"
+            *ngFor="let h of highlights; let i = index"
+            [style.animation-delay]="(i * 0.1) + 's'"
+          >
+            <span class="hero__highlight-icon">{{ h.icon }}</span>
+            <span class="hero__highlight-text">{{ h.text }}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mouse scroll indicator -->
+  <button
+    class="hero__scroll-mouse"
+    (click)="scrollTo('about')"
+    aria-label="Scroll down to About section"
+  >
+    <div class="mouse">
+      <div class="mouse__dot"></div>
+    </div>
+    <span class="hero__scroll-label">Scroll</span>
+  </button>
+
+</section>

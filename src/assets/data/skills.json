@@ -1,0 +1,32 @@
+[
+  {
+    "category": "Frontend",
+    "icon": "⬡",
+    "skills": [
+      { "name": "Angular", "percentage": 92 },
+      { "name": "TypeScript", "percentage": 88 },
+      { "name": "JavaScript (ES6+)", "percentage": 85 },
+      { "name": "HTML5 / CSS3 / SCSS", "percentage": 90 }
+    ]
+  },
+  {
+    "category": "Libraries & Tools",
+    "icon": "⚙",
+    "skills": [
+      { "name": "RxJS", "percentage": 82 },
+      { "name": "D3.js", "percentage": 70 },
+      { "name": "Git", "percentage": 85 },
+      { "name": "Node.js (Basic)", "percentage": 55 }
+    ]
+  },
+  {
+    "category": "Angular Concepts",
+    "icon": "◈",
+    "skills": [
+      { "name": "Lazy Loading", "percentage": 90 },
+      { "name": "OnPush Change Detection", "percentage": 88 },
+      { "name": "Modular Architecture", "percentage": 85 },
+      { "name": "REST API / RxJS Observables", "percentage": 87 }
+    ]
+  }
+]

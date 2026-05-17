@@ -1,0 +1,111 @@
+// features/about/about.component.scss
+.about {
+  background: var(--color-bg-card);
+  border-top: var(--border-subtle);
+  border-bottom: var(--border-subtle);
+
+  &__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--section-padding-y) var(--section-padding-x);
+
+    @media (max-width: 768px) {
+      padding: 60px 24px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 80px;
+    align-items: start;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  // --- Bio ---
+  &__bio {
+    p {
+      font-size: 16px;
+      color: var(--color-gray);
+      line-height: 1.8;
+
+      strong {
+        color: var(--color-white);
+        font-weight: var(--fw-semibold);
+      }
+    }
+  }
+
+  &__stack {
+    margin-top: 32px;
+
+    &-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-gray-dim);
+      margin-bottom: 12px;
+    }
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  // --- Fact cards ---
+  &__facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+
+  &__fact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--color-bg);
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color var(--transition-med), box-shadow var(--transition-med),
+                transform var(--transition-fast);
+
+    &--link:hover {
+      border-color: rgba(255, 98, 50, 0.3);
+      box-shadow: 0 4px 20px rgba(255, 98, 50, 0.08);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__fact-icon {
+    font-size: 26px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__fact-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-gray-dim);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  &__fact-value {
+    font-size: 14px;
+    color: var(--color-white);
+    font-weight: var(--fw-medium);
+    line-height: 1.4;
+  }
+}

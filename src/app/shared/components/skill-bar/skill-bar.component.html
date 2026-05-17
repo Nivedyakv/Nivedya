@@ -1,0 +1,13 @@
+<!-- skill-bar.component.html -->
+<div class="skill-bar">
+  <div class="skill-bar__header">
+    <span class="skill-bar__name">{{ name }}</span>
+    <span class="skill-bar__pct">{{ percentage }}%</span>
+  </div>
+  <div class="skill-bar__track">
+    <div
+      class="skill-bar__fill"
+      [style.width.%]="animated ? percentage : 0"
+    ></div>
+  </div>
+</div>

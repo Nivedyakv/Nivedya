@@ -1,0 +1,72 @@
+// ============================================================
+// _variables.scss — Design Tokens (single source of truth)
+// ============================================================
+
+// --- Colors ---
+$color-bg:        #0D1220;
+$color-bg-card:   #131A29;
+$color-bg-line:   #1B2437;
+$color-accent:    #FF6232;
+$color-accent-dim:#CC4418;
+$color-white:     #FFFFFF;
+$color-gray:      #8A9BB5;
+$color-gray-dim:  #505E76;
+$color-teal:      #32C1C5;
+$color-success:   #28C840;
+$color-warning:   #FEBC2E;
+$color-error:     #FF5F57;
+
+// --- CSS Custom Properties (runtime accessible) ---
+:root {
+  --color-bg:        #{$color-bg};
+  --color-bg-card:   #{$color-bg-card};
+  --color-bg-line:   #{$color-bg-line};
+  --color-accent:    #{$color-accent};
+  --color-accent-dim:#{$color-accent-dim};
+  --color-white:     #{$color-white};
+  --color-gray:      #{$color-gray};
+  --color-gray-dim:  #{$color-gray-dim};
+  --color-teal:      #{$color-teal};
+
+  --font-sans:   'Inter', sans-serif;
+  --font-mono:   'Space Mono', monospace;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extrabold:800;
+
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  80px;
+  --space-2xl: 120px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+
+  --section-padding-y: 100px;
+  --section-padding-x: 80px;
+  --max-width: 1440px;
+  --content-width: 1280px;
+
+  --nav-height: 64px;
+  --transition-fast: 150ms ease;
+  --transition-med:  300ms ease;
+  --transition-slow: 500ms ease;
+
+  --border-subtle: 1px solid #{$color-bg-line};
+  --shadow-card:   0 4px 32px rgba(0,0,0,0.4);
+  --shadow-glow:   0 0 24px rgba(255, 98, 50, 0.15);
+}
+
+// --- Breakpoints ---
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  992px;
+$bp-xl:  1200px;
+$bp-2xl: 1440px;

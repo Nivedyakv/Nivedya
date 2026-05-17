@@ -1,0 +1,129 @@
+<!-- features/contact/contact.component.html -->
+<section id="contact" class="contact section-wrapper">
+  <div class="contact__inner">
+
+    <app-section-label
+      number="05"
+      label="Get in Touch"
+      title="Say...Hello"
+      appScrollAnimation [delay]="0"
+    ></app-section-label>
+
+    <p class="contact__sub" appScrollAnimation [delay]="80">
+      Open to full-time roles, freelance, and collaboration opportunities.<br>
+      Let's build something great together.
+    </p>
+
+    <div class="contact__body">
+      <!-- Left: Form -->
+      <div class="contact__form-wrap" appScrollAnimation [delay]="120">
+        <div class="contact__form-header">
+          <span class="mono text-dim">// send_message.sh</span>
+        </div>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact__form" novalidate>
+
+          <!-- Name -->
+          <div class="form-field" [class.form-field--error]="isInvalid('name')">
+            <label for="name" class="form-label">Your Name</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              placeholder="Nivedya KV"
+              class="form-input"
+              autocomplete="name"
+            >
+            <span class="form-error" *ngIf="isInvalid('name')">{{ getError('name') }}</span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-field" [class.form-field--error]="isInvalid('email')">
+            <label for="email" class="form-label">Your Email</label>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="you@example.com"
+              class="form-input"
+              autocomplete="email"
+            >
+            <span class="form-error" *ngIf="isInvalid('email')">{{ getError('email') }}</span>
+          </div>
+
+          <!-- Subject -->
+          <div class="form-field" [class.form-field--error]="isInvalid('subject')">
+            <label for="subject" class="form-label">Subject</label>
+            <input
+              id="subject"
+              type="text"
+              formControlName="subject"
+              placeholder="Project collaboration / Hiring"
+              class="form-input"
+            >
+            <span class="form-error" *ngIf="isInvalid('subject')">{{ getError('subject') }}</span>
+          </div>
+
+          <!-- Message -->
+          <div class="form-field" [class.form-field--error]="isInvalid('message')">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              placeholder="Tell me about your project or opportunity..."
+              class="form-input form-textarea"
+              rows="4"
+            ></textarea>
+            <span class="form-error" *ngIf="isInvalid('message')">{{ getError('message') }}</span>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="contact__submit"
+            [disabled]="status === 'loading'"
+          >
+            <span *ngIf="status !== 'loading'">$ send_message.sh →</span>
+            <span *ngIf="status === 'loading'" class="contact__spinner">Sending...</span>
+          </button>
+
+          <!-- Success -->
+          <div class="contact__feedback contact__feedback--success" *ngIf="status === 'success'">
+            ✓ Message sent! I'll get back to you soon.
+          </div>
+
+          <!-- Error -->
+          <div class="contact__feedback contact__feedback--error" *ngIf="status === 'error'">
+            ✗ {{ errorMessage || 'Something went wrong. Please try again.' }}
+            <button type="button" (click)="resetStatus()" class="contact__retry">Retry</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right: Info + Availability -->
+      <div class="contact__info-col" appScrollAnimation [delay]="200">
+        <a
+          class="contact__info-card"
+          *ngFor="let info of contactInfos"
+          [href]="info.href || null"
+          [class.contact__info-card--link]="!!info.href"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="contact__info-icon">{{ info.icon }}</span>
+          <div>
+            <p class="contact__info-label">{{ info.label }}</p>
+            <p class="contact__info-value">{{ info.value }}</p>
+          </div>
+        </a>
+
+        <!-- Availability badge -->
+        <div class="contact__avail">
+          <span class="contact__avail-dot"></span>
+          <span>Open to Work — Angular / Frontend Roles</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

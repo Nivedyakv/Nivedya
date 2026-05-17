@@ -1,0 +1,60 @@
+<!-- features/about/about.component.html -->
+<section id="about" class="about section-wrapper">
+  <div class="about__inner">
+
+    <app-section-label
+      number="01"
+      label="About Me"
+      title="The Engineer Behind the Code"
+      appScrollAnimation [delay]="0"
+    ></app-section-label>
+
+    <div class="about__body">
+      <!-- Left: Bio -->
+      <div class="about__bio" appScrollAnimation [delay]="100">
+        <p>
+          I'm a performance-focused Angular Developer with 2+ years crafting scalable,
+          production-grade UI applications. Recognized as <strong>Star Performer</strong>
+          at Beinex, I specialize in building modular Angular architectures, RxJS reactive
+          flows, and highly optimized rendering pipelines.
+        </p>
+        <br>
+        <p>
+          I love the intersection of engineering precision and clean design — every
+          component I ship is a statement of intent. Currently working on the
+          <strong>DMI (Data Maturity Index)</strong> project for the Abu Dhabi Government.
+        </p>
+
+        <!-- Stack badges -->
+        <div class="about__stack">
+          <span class="about__stack-label">Core Stack:</span>
+          <div class="about__badges">
+            <app-badge
+              *ngFor="let tech of techStack"
+              [label]="tech"
+              color="teal"
+            ></app-badge>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Fact cards -->
+      <div class="about__facts">
+        <a
+          *ngFor="let fact of facts; let i = index"
+          class="about__fact-card"
+          [href]="fact.href || null"
+          [class.about__fact-card--link]="!!fact.href"
+          appScrollAnimation [delay]="120 + i * 80"
+        >
+          <span class="about__fact-icon">{{ fact.icon }}</span>
+          <div>
+            <p class="about__fact-label">{{ fact.label }}</p>
+            <p class="about__fact-value">{{ fact.value }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

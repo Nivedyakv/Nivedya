@@ -1,0 +1,98 @@
+// layout/footer/footer.component.scss
+.footer {
+  width: 100%;
+  background: var(--color-bg);
+  border-top: var(--border-subtle);
+
+  &__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 var(--section-padding-x);
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      height: auto;
+      padding: 28px 24px;
+      text-align: center;
+      gap: 16px;
+    }
+  }
+
+  // Logo
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: opacity var(--transition-fast);
+
+    &:hover { opacity: 0.75; }
+
+    &-tag {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--color-teal);
+    }
+
+    &-text {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--color-white);
+    }
+  }
+
+  // Copyright
+  &__copy {
+    font-size: 13px;
+    color: var(--color-gray-dim);
+    line-height: 1.5;
+    text-align: center;
+    flex: 1;
+
+    @media (max-width: 900px) {
+      order: 3;
+    }
+  }
+
+  // Nav
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2px;
+    }
+  }
+
+  &__nav-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--color-gray);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast), background var(--transition-fast);
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--color-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+}

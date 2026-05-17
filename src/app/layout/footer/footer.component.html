@@ -1,0 +1,28 @@
+<!-- layout/footer/footer.component.html -->
+<footer class="footer">
+  <div class="footer__inner">
+
+    <!-- Logo -->
+    <button class="footer__logo" (click)="scrollService.scrollToTop()" aria-label="Back to top">
+      <span class="footer__logo-tag">&lt;/&gt;</span>
+      <span class="footer__logo-text">nivedya.dev</span>
+    </button>
+
+    <!-- Copyright -->
+    <p class="footer__copy">
+      &copy; {{ year }} Nivedya KV &mdash; Angular Developer &middot; Bangalore, India
+    </p>
+
+    <!-- Nav links -->
+    <nav class="footer__nav" aria-label="Footer navigation">
+      <button
+        *ngFor="let link of links"
+        class="footer__nav-link"
+        (click)="scrollService.scrollToSection(link.fragment)"
+      >
+        {{ link.label }}
+      </button>
+    </nav>
+
+  </div>
+</footer>

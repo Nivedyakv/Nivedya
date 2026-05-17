@@ -1,0 +1,77 @@
+<!-- features/projects/projects.component.html -->
+<section id="projects" class="projects section-wrapper">
+  <div class="projects__inner">
+
+    <app-section-label
+      number="04"
+      label="Featured Project"
+      title="What I've Shipped"
+      appScrollAnimation [delay]="0"
+    ></app-section-label>
+
+    <div *ngIf="projects$ | async as projectList">
+      <div
+        class="project-card"
+        *ngFor="let project of projectList; let i = index"
+        appScrollAnimation [delay]="i * 100"
+      >
+        <!-- Left: Mockup preview -->
+        <div class="project-card__preview">
+          <div class="project-card__mockup">
+            <!-- Fake dashboard chart bars -->
+            <div class="mockup__bars">
+              <div
+                class="mockup__bar"
+                *ngFor="let h of [60,90,50,120,80,110,70]; let j = index"
+                [style.height.px]="h"
+                [style.opacity]="0.5 + (j % 3) * 0.2"
+              ></div>
+            </div>
+            <div class="mockup__label">{{ project.title }}</div>
+          </div>
+        </div>
+
+        <!-- Right: Details -->
+        <div class="project-card__content">
+          <h3 class="project-card__title">{{ project.title }}</h3>
+
+          <div class="project-card__stack">
+            <app-badge
+              *ngFor="let tech of project.stack"
+              [label]="tech"
+              color="teal"
+            ></app-badge>
+          </div>
+
+          <p class="project-card__desc">{{ project.description }}</p>
+
+          <ul class="project-card__highlights">
+            <li *ngFor="let h of project.highlights">
+              <span class="check">✓</span> {{ h }}
+            </li>
+          </ul>
+
+          <div class="project-card__actions">
+            <a
+              class="btn-outline"
+              [href]="project.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ⌥ View Code
+            </a>
+            <a
+              class="btn-accent"
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ↗ Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

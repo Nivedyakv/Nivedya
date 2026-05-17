@@ -1,0 +1,73 @@
+<!-- features/experience/experience.component.html -->
+<section id="experience" class="experience section-wrapper">
+  <div class="experience__inner">
+
+    <app-section-label
+      number="03"
+      label="Professional Journey"
+      title="Where I've Been Building"
+      appScrollAnimation [delay]="0"
+    ></app-section-label>
+
+    <div class="experience__timeline" *ngIf="experiences$ | async as exps">
+
+      <!-- Timeline items -->
+      <div
+        class="exp-item"
+        *ngFor="let exp of exps; trackBy: trackById; let i = index"
+        [class.exp-item--active]="exp.active"
+        appScrollAnimation [delay]="80 + i * 100"
+      >
+        <!-- Left: period -->
+        <div class="exp-item__period">
+          <span [class.exp-item__period--active]="exp.active">{{ exp.period }}</span>
+          <div class="exp-item__type-badge">{{ exp.type === 'intern' ? 'Internship' : 'Full-time' }}</div>
+        </div>
+
+        <!-- Dot + Line -->
+        <div class="exp-item__connector">
+          <div class="exp-item__dot" [class.exp-item__dot--active]="exp.active"></div>
+          <div class="exp-item__line"></div>
+        </div>
+
+        <!-- Right: card -->
+        <div class="exp-item__card">
+          <div class="exp-item__card-header">
+            <div>
+              <h3 class="exp-item__role">{{ exp.role }}</h3>
+              <p class="exp-item__company">{{ exp.company }} · {{ exp.location }}</p>
+            </div>
+            <span class="exp-item__active-badge" *ngIf="exp.active">● Current</span>
+          </div>
+
+          <p class="exp-item__project">▸ {{ exp.project }}</p>
+
+          <ul class="exp-item__bullets">
+            <li *ngFor="let bullet of exp.bullets">{{ bullet }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education + Award row -->
+    <div class="experience__bottom" appScrollAnimation [delay]="400">
+      <div class="experience__edu-card">
+        <span class="experience__edu-icon">🎓</span>
+        <div>
+          <h4>{{ education.degree }}</h4>
+          <p>{{ education.institution }}</p>
+          <p class="mono text-dim">{{ education.affiliation }} · {{ education.period }}</p>
+        </div>
+      </div>
+
+      <div class="experience__award-card">
+        <span class="experience__edu-icon">⭐</span>
+        <div>
+          <h4 class="text-accent">Star Performer Award</h4>
+          <p>Top intern at Beinex — recognized for exceptional technical delivery and initiative.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,231 @@
+// features/experience/experience.component.scss
+.experience {
+  background: var(--color-bg-card);
+  border-top: var(--border-subtle);
+
+  &__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--section-padding-y) var(--section-padding-x);
+
+    @media (max-width: 768px) {
+      padding: 60px 24px;
+    }
+  }
+
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 48px;
+  }
+}
+
+// --- Timeline item ---
+.exp-item {
+  display: grid;
+  grid-template-columns: 220px 40px 1fr;
+  gap: 0;
+  align-items: stretch;
+  min-height: 160px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 0 40px 1fr;
+
+    &__period {
+      display: none;
+    }
+  }
+
+  &--active &__card {
+    border-color: rgba(255, 98, 50, 0.4);
+  }
+
+  // Left: period
+  &__period {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    padding-top: 4px;
+    gap: 6px;
+
+    span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-gray-dim);
+      text-align: right;
+
+      &.exp-item__period--active {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__type-badge {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--color-gray-dim);
+    background: var(--color-bg-line);
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  // Center: connector
+  &__connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &__dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-bg-line);
+    border: 2px solid var(--color-gray-dim);
+    flex-shrink: 0;
+    margin-top: 6px;
+    z-index: 1;
+
+    &--active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      box-shadow: 0 0 12px rgba(255, 98, 50, 0.4);
+    }
+  }
+
+  &__line {
+    width: 2px;
+    flex: 1;
+    background: var(--color-bg-line);
+    margin: 4px 0;
+  }
+
+  &:last-child &__line {
+    display: none;
+  }
+
+  // Right: card
+  &__card {
+    margin-left: 20px;
+    margin-bottom: 24px;
+    padding: 24px;
+    background: var(--color-bg);
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-med);
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      gap: 16px;
+    }
+  }
+
+  &__role {
+    font-size: 18px;
+    font-weight: var(--fw-semibold);
+    color: var(--color-white);
+    margin-bottom: 4px;
+  }
+
+  &__company {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-accent);
+  }
+
+  &__active-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-teal);
+    background: rgba(50, 193, 197, 0.1);
+    border: 1px solid rgba(50, 193, 197, 0.2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &__project {
+    font-size: 13px;
+    color: var(--color-gray-dim);
+    margin-bottom: 14px;
+  }
+
+  &__bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    li {
+      font-size: 13px;
+      color: var(--color-gray);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+
+      &::before {
+        content: '·';
+        position: absolute;
+        left: 4px;
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+// --- Bottom: edu + award ---
+.experience {
+  &__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__edu-card,
+  &__award-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: var(--border-subtle);
+    background: var(--color-bg);
+
+    h4 {
+      font-size: 16px;
+      font-weight: var(--fw-semibold);
+      color: var(--color-white);
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 13px;
+      color: var(--color-gray);
+      line-height: 1.5;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__award-card {
+    border-color: rgba(255, 98, 50, 0.25);
+
+    h4 { color: var(--color-accent); }
+  }
+
+  &__edu-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}

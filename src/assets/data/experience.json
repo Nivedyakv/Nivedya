@@ -1,0 +1,48 @@
+[
+  {
+    "id": "se-beinex",
+    "period": "Jun 2025 – Present",
+    "role": "Software Engineer",
+    "company": "Beinex",
+    "location": "Kochi, India",
+    "project": "DMI (Data Maturity Index) – Abu Dhabi Government",
+    "active": true,
+    "type": "full-time",
+    "bullets": [
+      "Architected scalable Angular modules with lazy loading → ~35% bundle size reduction",
+      "Engineered 10+ reusable UI components in TypeScript & SCSS → ~25% faster sprints",
+      "Optimized OnPush change detection strategy → ~40% rendering performance boost",
+      "Delivered seamless REST API integrations with RxJS Observables → ~20% latency reduction"
+    ]
+  },
+  {
+    "id": "ase-beinex",
+    "period": "Jun 2024 – Jun 2025",
+    "role": "Associate Software Engineer",
+    "company": "Beinex",
+    "location": "Kochi, India",
+    "project": "Aurex (Company Product) + PM Tool",
+    "active": false,
+    "type": "full-time",
+    "bullets": [
+      "Spearheaded UI/UX enhancements on Aurex across 3+ Angular modules",
+      "Streamlined sprint tracking workflows with an internal PM tool (Jira-like)",
+      "Active Agile/Scrum participant — sprint planning, stand-ups, and code reviews"
+    ]
+  },
+  {
+    "id": "intern-beinex",
+    "period": "Feb 2024 – May 2024",
+    "role": "Internship Trainee",
+    "company": "Beinex",
+    "location": "Kochi, India",
+    "project": "Live Angular Projects",
+    "active": false,
+    "type": "intern",
+    "bullets": [
+      "Resolved 15+ critical UI bugs in live Angular projects",
+      "Contributed to a smoother production release cycle",
+      "Recognized as Top Intern — received Star Performer Award"
+    ]
+  }
+]

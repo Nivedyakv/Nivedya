@@ -1,0 +1,62 @@
+<!-- layout/navbar/navbar.component.html -->
+<nav class="navbar" [class.navbar--scrolled]="isScrolled" [class.navbar--open]="menuOpen">
+  <div class="navbar__inner">
+
+    <!-- Logo -->
+    <button class="navbar__logo" (click)="navigate('hero')" aria-label="Go to top">
+      <span class="navbar__logo-tag">&lt;/&gt;</span>
+      <span class="navbar__logo-text">nivedya.dev</span>
+    </button>
+
+    <!-- Desktop links -->
+    <ul class="navbar__links" role="menubar">
+      <li *ngFor="let link of navLinks" role="none">
+        <button
+          role="menuitem"
+          class="navbar__link"
+          [class.navbar__link--active]="isActive(link.fragment)"
+          (click)="navigate(link.fragment)"
+        >
+          {{ link.label }}
+        </button>
+      </li>
+    </ul>
+
+    <!-- Hire Me CTA -->
+    <button class="navbar__cta" (click)="navigate('contact')">
+      Hire Me
+    </button>
+
+    <!-- Hamburger (mobile) -->
+    <button
+      class="navbar__hamburger"
+      [class.navbar__hamburger--open]="menuOpen"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="navbar__drawer" [class.navbar__drawer--open]="menuOpen">
+    <ul>
+      <li *ngFor="let link of navLinks">
+        <button
+          class="navbar__drawer-link"
+          [class.navbar__drawer-link--active]="isActive(link.fragment)"
+          (click)="navigate(link.fragment)"
+        >
+          {{ link.label }}
+        </button>
+      </li>
+      <li>
+        <button class="navbar__cta navbar__cta--mobile" (click)="navigate('contact')">
+          Hire Me
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
