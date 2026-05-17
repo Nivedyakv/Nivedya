@@ -28,12 +28,29 @@ import { ContactComponent }    from './features/contact/contact.component';
     <app-navbar></app-navbar>
 
     <main>
-      <app-hero></app-hero>
-      <app-about></app-about>
-      <app-skills></app-skills>
-      <app-experience></app-experience>
-      <app-projects></app-projects>
-      <app-contact></app-contact>
+      @defer (on viewport) {
+        <app-hero></app-hero>
+      }
+
+      @defer (on viewport) {
+        <app-about></app-about>
+      }
+
+      @defer (on viewport) {
+        <app-skills></app-skills>
+      }
+
+      @defer (on viewport) {
+        <app-experience></app-experience>
+      }
+
+      @defer (on viewport) {
+        <app-projects></app-projects>
+      }
+
+      @defer (on viewport) {
+        <app-contact></app-contact>
+      }
     </main>
 
     <app-footer></app-footer>
